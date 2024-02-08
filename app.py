@@ -5,8 +5,8 @@ import streamlit as st
 
 def main():
     st.set_page_config(
-        page_title="OpenAI Assistant with Retrieval",
-        page_icon="📚",
+        page_title="Nurse Interviewer",
+        page_icon="🏥",
     )
 
     api_key = st.secrets["OPENAI_API_KEY"]
@@ -31,7 +31,7 @@ def main():
                 st.markdown(message["content"])
 
                 # Accept user input
-        if prompt := st.chat_input(f"Message for more Greek recipes..."):
+        if prompt := st.chat_input(f"Please introduce yourself and the job you are interviewing for today..."):
             # Add user message to chat history
             st.session_state.messages.append({"role": "user", "content": prompt})
             # Display user message in chat message container
